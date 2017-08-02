@@ -18,7 +18,7 @@ or
 {
 	"code": 200,
 	"message": "Successfully fetched your favorites.",
-	"favorites": [
+	"songs": [
 		{
 			"id": 11873,
 			"title": "春風 SHUN PU",

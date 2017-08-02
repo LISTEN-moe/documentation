@@ -84,7 +84,7 @@ Accepts either username & password or email address & password.
 `/:key` verification key sent via email.
 
 ### On Success
-**HTTP Code:** 201
+**HTTP Code:** 200
 
 ```json
 {
