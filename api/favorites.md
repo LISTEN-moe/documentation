@@ -86,7 +86,7 @@ or
 
 * No song id provided `400 BAD REQUEST`
 * No song found `404 NOT FOUND`
-* Song has already been favourited `400 BAD REQUEST`
+* Song has already been favourited `409 CONFLICT`
 
 # Favourite Remove
 
@@ -114,4 +114,4 @@ or
 
 * No song id provided `400 BAD REQUEST`
 * No song found `404 NOT FOUND`
-* Song has not been favourited `400 BAD REQUEST`
+* Song has not been favourited `404 NOT FOUND`
