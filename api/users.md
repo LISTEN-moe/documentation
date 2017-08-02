@@ -27,7 +27,7 @@ or
 		"roles": [
 			"user"
 		],
-		"settings": "{}", // @me only
+		"settings": {}, // @me only
 		"uploadLimit": 30, // @me only
 		"uploads": 100,
 		"favorites": 567

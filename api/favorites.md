@@ -106,7 +106,7 @@ or
 ```json
 {
 	"code": 200,
-	"message": "Sucessfully removed song from your favorites."
+	"message": "Sucessfully removed the song from your favorites."
 }
 ```
 
