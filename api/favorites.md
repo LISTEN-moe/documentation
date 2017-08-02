@@ -2,9 +2,9 @@
 title: Favourites
 ---
 
-# Favourites @me
+# Favourites Get
 
-## GET `/api/favourites/@me`
+## GET `/api/favorites/:username` | `/api/favorites/@me`
 
 ### Headers
 * `Authorization: your.jwt.token`
@@ -50,13 +50,15 @@ OR if you have no favourites:
 ```json
 {
 	"code": 200,
-	"message": "You don\'t have any favorites.",
+	"message": "You do not have any favorites.",
 	"songs": []
 }
 ```
 
 ### Possible Errors
-**None**
+
+* No user provided `400 BAD REQUEST`
+* No user found `404 NOT FOUND`
 
 # Favourite Add
 
@@ -68,7 +70,7 @@ or
 * `Key: yourapikey`
 
 ### URL Parameters
-* `/:songId` The id of the song you'd like to favourite.
+* `/:songId` The id of the song you would like to favourite.
 
 ### On Success
 **HTTP Code:** 200
@@ -76,14 +78,15 @@ or
 ```json
 {
 	"code": 200,
-	"message": "Successfully favourited the song."
+	"message": "Sucessfully added the song to your favorites."
 }
 ```
 
 ### Possible Errors
 
-* Invalid song id `400 BAD REQUEST`
-* Song was already favourited `400 BAD REQUEST`
+* No song id provided `400 BAD REQUEST`
+* No song found `404 NOT FOUND`
+* Song has already been favourited `400 BAD REQUEST`
 
 # Favourite Remove
 
@@ -95,7 +98,7 @@ or
 * `Key: yourapikey`
 
 ### URL Parameters
-* `/:songId` The id of the song you'd like to unfavourite.
+* `/:songId` The id of the song you would like to unfavourite.
 
 ### On Success
 **HTTP Code:** 200
@@ -103,11 +106,12 @@ or
 ```json
 {
 	"code": 200,
-	"message": "Successfully unfavourited the song."
+	"message": "Sucessfully removed song from your favorites."
 }
 ```
 
 ### Possible Errors
 
-* Invalid song id `400 BAD REQUEST`
-* Song isn't favourited `400 BAD REQUEST`
+* No song id provided `400 BAD REQUEST`
+* No song found `404 NOT FOUND`
+* Song has not been favourited `400 BAD REQUEST`

@@ -26,14 +26,14 @@ title: Auth
 ```json
 {
 	"code": 201,
-	"message": "You have successfully created a new account."
+	"message": "You have successfully created a new account. Please verify your account before you login."
 }
 ```
 
 ### Possible Errors
 
 * Incomplete Request Body `400 BAD REQUEST`
-* Invalid email address/username/password `400 BAD REQUEST`
+* Invalid email/username or password `400 BAD REQUEST`
 * Email or Username already in use `409 CONFLICT`
 
 # Auth Login
@@ -72,8 +72,7 @@ Accepts either username & password or email address & password.
 ### Possible Errors
 
 * Incomplete Request Body `400 BAD REQUEST`
-* Invalid email address or username `422 UNPROCESSABLE ENTITY`
-* Invalid password `401 UNAUTHORIZED`
+* Invalid email address, username or password `400 BAD REQUEST`
 * Account not verified before requesting token `401 UNAUTHORIZED`
 
 # Auth Verify
@@ -95,6 +94,6 @@ Accepts either username & password or email address & password.
 
 ### Possible Errors
 
-* Missing verification key `400 BAD REQUEST`
-* Invalid verification key `422 UNPROCESSABLE ENTITY`
+* No verification key provided `400 BAD REQUEST`
+* Invalid verification key `400 BAD REQUEST`
 * Account is already verified `409 CONFLICT`

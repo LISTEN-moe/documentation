@@ -17,6 +17,7 @@ or
 ```json
 {
 	"code": 200,
+	"message": "Successfully fetched the songs.",
 	"songs": [
 		{
 			"id": 11873,
@@ -38,7 +39,8 @@ or
 					"coverIamge": "mirror.to.the.album.image.com"
 				},
 				...
-			]
+			],
+			"favorite": true
 		},
 		...
 	]
@@ -46,4 +48,5 @@ or
 ```
 
 ### Possible Errors
+
 **None**
