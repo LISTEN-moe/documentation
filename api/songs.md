@@ -12,7 +12,7 @@ or
 * `Key: yourapikey`
 
 ### On Success
-**HTTP Code:*** 200
+**HTTP Code:** 200
 
 ```json
 {
