@@ -33,7 +33,7 @@ title: Auth
 ### Possible Errors
 
 * Incomplete Request Body `400 BAD REQUEST`
-* Invalid email/username or password `400 BAD REQUEST`
+* Invalid email/username or password `401 UNAUTHORIZED`
 * Email or Username already in use `409 CONFLICT`
 
 # Auth Login
@@ -72,7 +72,7 @@ Accepts either username & password or email address & password.
 ### Possible Errors
 
 * Incomplete Request Body `400 BAD REQUEST`
-* Invalid email address, username or password `400 BAD REQUEST`
+* Invalid email address, username or password `401 UNAUTHORIZED`
 * Account not verified before requesting token `401 UNAUTHORIZED`
 
 # Auth Verify
@@ -95,5 +95,5 @@ Accepts either username & password or email address & password.
 ### Possible Errors
 
 * No verification key provided `400 BAD REQUEST`
-* Invalid verification key `400 BAD REQUEST`
+* Invalid verification key `401 UNAUTHORIZED`
 * Account is already verified `409 CONFLICT`
