@@ -8,7 +8,33 @@ docute.init({
 				path: '/'
 			},
 			{
-				title: 'API',
+				title: 'API v3',
+				type: 'dropdown',
+				items: [
+					{
+						title: 'Auth',
+						path: '/oldapi/auth'
+					},
+					{
+						title: 'Favorites',
+						path: '/oldapi/favorites'
+					},
+					{
+						title: 'Requests',
+						path: '/oldapi/requests'
+					},
+					{
+						title: 'Users',
+						path: '/oldapi/users'
+					},
+					{
+						title: 'Websocket',
+						path: '/oldapi/websocket'
+					}
+				]
+			},
+			{
+				title: 'API v4',
 				type: 'dropdown',
 				items: [
 					{
