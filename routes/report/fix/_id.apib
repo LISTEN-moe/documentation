@@ -1,0 +1,58 @@
+## Report [/reports/{id}/fix]
+
+## Process Report [POST]
+
++ Request (application/json)
+
+	+ Headers
+
+			Accept: application/vnd.listen.v4+json
+			Authorization: Bearer JWT
+
++ Response 200 (application/json)
+
+		{
+			"message": "Successfully fixed report."
+		}
+
+		{
+			"message": "Successfully invalidated report."
+		}
+
++ Response 400 (application/json)
+
+		{
+			"message": "No params provided."
+		}
+
+		{
+			"message": "Invalid params provided."
+		}
+
+		{
+			"message": "No body provided."
+		}
+
+		{
+			"message": "Invalid body provided."
+		}
+
+		{
+			"message": "When invalidating a report you need to supply a reason."
+		}
+
+		{
+			"message": "This report has already been processed."
+		}
+
++ Response 403 (application/json)
+
+		{
+			"message": "Not authorized."
+		}
+
++ Response 404 (application/json)
+
+		{
+			"message": "No report found."
+		}
