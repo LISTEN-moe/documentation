@@ -1,0 +1,129 @@
+## Songs [/songs]
+
+## Get Songs [GET]
+
++ Request (application/json)
+
+	+ Headers
+
+			Accept: application/vnd.listen.v4+json
+			Authorization: Bearer JWT
+
++ Response 200 (application/json)
+
+		{
+			"message": "Successfully logged in.",
+			"songs": [
+				{
+					"id": 1,
+					"title": "魂を燃やせ!!",
+					"titleSearchRomaji": null,
+					"source": null,
+					"duration": 243,
+					"lastPlayed": "1970-01-01T00:00:00.000Z",
+					"enabled": true,
+					"artists": [
+						"けぇぽん/小峠 舞"
+					],
+					"artistsRomaji": [
+						null
+					],
+					"artistsSearchRomaji": [
+						null
+					],
+					"albums": [
+						"螢火-HOTARUBI-"
+					],
+					"albumsCover": [
+						"some-url-to-the-cover"
+					],
+					"albumsSearchRomaji": [
+						null
+					],
+					"groups": [],
+					"groupsRomaji": [],
+					"groupsSearchRomaji": [],
+					"tags": [],
+					"favorite": false
+				},
+				...
+			]
+		}
+
+		{
+			"message": "Successfully retrieved songs.",
+			"songs": []
+		}
+
+## Upload Songs [POST]
+
++ Request (multipart/form-data)
+
+	+ Headers
+
+			Accept: application/vnd.listen.v4+json
+			Authorization: Bearer JWT
+
++ Response 201 (application/json)
+
+		{
+			"message": "Successfully uploaded the file(s)."
+		}
+
++ Response 400 (application/json)
+
+		{
+			"message": "Invalid Content-Type header, must be multipart w/ boundary."
+		}
+
+		{
+			"message": "Please only upload mp3s."
+		}
+
+		{
+			"message": "No file(s) selected."
+		}
+
+		{
+			"message": "Exceeeded maximum number of files to upload."
+		}
+
+		{
+			"message": "The media tags for this file are missing the title, artists and/or album."
+		}
+
++ Response 401 (application/json)
+
+		{
+			"message": "Invalid body provided."
+		}
+
+		{
+			"message": "Invalid authorization."
+		}
+
+		{
+			"message": "Already uploaded."
+		}
+
++ Response 403 (application/json)
+
+		{
+			"message": "This account has been disabled."
+		}
+
++ Response 413 (application/json)
+
+		{
+			"message": "Content-Length too large."
+		}
+
+		{
+			"message": "Exceeded maximum filesize of payload."
+		}
+
++ Response 500 (application/json)
+
+		{
+			"message": "Internal server error."
+		}

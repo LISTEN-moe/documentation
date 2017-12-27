@@ -1,0 +1,81 @@
+## Request [/requests]
+
+## Get Requests [GET]
+
++ Request (application/json)
+
+	+ Headers
+
+			Accept: application/vnd.listen.v4+json
+			Authorization: Bearer JWT
+
++ Response 200 (application/json)
+
+		{
+			"message": "OwO whats this."
+		}
+
+## Request [/requests/{id}]
+
++ Parameters
+	+ id
+
+## Post Request [POST]
+
++ Response 204
+
++ Response 400 (application/json)
+
+		{
+			"message": "No params provided."
+		}
+
+		{
+			"message": "No song found."
+		}
+
++ Response 403 (application/json)
+
+		{
+			"message": "Not authorized."
+		}
+
+		{
+			"message": "All requests used for today."
+		}
+
+		{
+			"message": "Song already queued."
+		}
+
++ Response 500 (application/json)
+
+		{
+			"message": "Internal server error."
+		}
+
+## Delete Request [DELETE]
+
++ Response 204
+
++ Response 400 (application/json)
+
+		{
+			"message": "No params provided."
+		}
+
+		{
+			"message": "No request found."
+		}
+
++ Response 403 (application/json)
+
+		{
+			"message": "Not authorized."
+		}
+
++ Response 500 (application/json)
+
+		{
+			"message": "Internal server error."
+		}

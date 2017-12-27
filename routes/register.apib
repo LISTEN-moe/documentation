@@ -1,0 +1,33 @@
+## Register [/register]
+
+## Register [POST]
+
++ Request (application/json)
+
+	+ Headers
+
+			Accept: application/vnd.listen.v4+json
+
+	+ Body
+
+			{
+				"email": "testUser@gmail.com",
+				"username": "TestUser",
+				"password": "superSecurePassword"
+			}
+
++ Response 200 (application/json)
+
+		{
+			"message": "You have successfully created a new account."
+		}
+
++ Response 400 (application/json)
+
+		{
+			"message": "Invalid e-mail address provided."
+		}
+
+		{
+			"message": "An account with that email address and/or username already exists."
+		}
