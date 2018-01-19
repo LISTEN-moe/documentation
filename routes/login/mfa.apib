@@ -1,37 +1,26 @@
-## Login [/login]
+## Login 2FA [/login/mfa]
 
-## Login [POST]
+## Login 2FA [POST]
 
 + Request (application/json)
 
 	+ Headers
 
 			Accept: application/vnd.listen.v4+json
+			Authorization: Bearer Temp2FAJWT
 
 	+ Body
 
 			{
-				"username": "TestUser",
-				"password": "superSecurePassword"
-			}
-
-			{
-				"username": "testUser@gmail.com",
-				"password": "superSecurePassword"
+				"token": "OPTCode",
 			}
 
 + Response 200 (application/json)
 
 		{
 			"message": "Successfully logged in.",
-			"token": "JWT",
+			"token": "mfa.JWT",
 			"apiKey": "your-api-key" // Only if requested via developer access
-		}
-
-		{
-			"message": "Please provide the 2FA code to log in.",
-			"mfa": true,
-			"token": "JWT" // This token is only valid for ~2m from this point on
 		}
 
 + Response 400 (application/json)
@@ -53,7 +42,5 @@
 + Response 403 (application/json)
 
 		{
-			"message": "This account has been deactivated."
+			"message": "This account has been disabled."
 		}
-
-<!-- include(login/mfa.apib) -->

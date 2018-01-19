@@ -1,0 +1,56 @@
+## Favorite [/favorites/{id}/tags]
+
++ Parameters
+	+ id
+
+## Update Favorite Tags [PUT]
+
++ Request (application/json)
+
+	+ Headers
+
+			Accept: application/vnd.listen.v4+json
+			Authorization: Bearer JWT
+
+	+ Body
+
+			{
+				"tags": ["an", "array", "of", "tags"]
+			}
+
++ Response 200
+
+		{
+			"message": "Successfully updated tags on favorite.",
+			"tags": ["an", "array", "of", "tags"]
+		}
+
++ Response 400 (application/json)
+
+		{
+			"message": "No params provided."
+		}
+
+		{
+			"message": "Invalid params provided."
+		}
+
+		{
+			"message": "No body provided."
+		}
+
+		{
+			"message": "Invalid body provided."
+		}
+
++ Response 403 (application/json)
+
+		{
+			"message": "Not authorized."
+		}
+
++ Response 404 (application/json)
+
+		{
+			"message": "No favorite found."
+		}

@@ -12,39 +12,60 @@
 + Response 200 (application/json)
 
 		{
-			"message": "Successfully logged in.",
+			"message": "Successfully retrieved songs.",
 			"songs": [
 				{
-					"id": 1,
-					"title": "魂を燃やせ!!",
-					"titleSearchRomaji": null,
-					"source": null,
-					"duration": 243,
-					"lastPlayed": "1970-01-01T00:00:00.000Z",
-					"enabled": true,
-					"artists": [
-						"けぇぽん/小峠 舞"
-					],
-					"artistsRomaji": [
-						null
-					],
-					"artistsSearchRomaji": [
-						null
-					],
 					"albums": [
-						"螢火-HOTARUBI-"
+						"Märchen EP"
 					],
 					"albumsCover": [
-						"some-url-to-the-cover"
+						"Märchen-EP_cover.jpg"
+					],
+					"albumReleaseDate": [
+						"1970-01-01T00:00:00.000Z"
 					],
 					"albumsSearchRomaji": [
 						null
 					],
+					"albumsTrackNumber": [
+						1
+					],
+					"albumsType": [
+						1
+					],
+					"artists": [
+						"Aiobahn"
+					],
+					"artistsId": [
+						null
+					],
+					"artistsRomaji": [
+						null
+					],
+					"artistsSearchROmaji": [
+						null
+					],
+					"duration": 176,
+					"enabled": true,
+					"favorite": false,
 					"groups": [],
 					"groupsRomaji": [],
 					"groupsSearchRomaji": [],
+					"id": 1,
+					"lastPlayed": "1970-01-01T00:00:00.000Z",
+					"snippet": "1-1. ヘンゼルとグレーテルの森_snippet.mp3",
+					"sources": [
+						null
+					],
+					"sourcesRomaji": [
+						null
+					],
 					"tags": [],
-					"favorite": false
+					"title": "ヘンゼルとグレーテルの森",
+					"titleSearchRomaji": null,
+					"uploaderUuid": "345c45aa-5h76-9zh4-6tr7-6tkl52rn5783",
+					"uploaderUsername": "testuser",
+					"uploaderDisplayName": "TestUser"
 				},
 				...
 			]
@@ -57,12 +78,53 @@
 
 ## Upload Songs [POST]
 
-+ Request (multipart/form-data)
++ Request (application/json)
 
 	+ Headers
 
 			Accept: application/vnd.listen.v4+json
 			Authorization: Bearer JWT
+
+	+ Body
+
+			{
+				"files": [
+					{
+						"type": 1,
+						"albums": [
+							"some-album"
+						],
+						"albumsRomaji": [
+							"some-romaji-album"
+						],
+						"comment": "some-comment",
+						"releaseDate": "some-ISO-releasedate",
+						"songs": [
+							"artists": [
+								"some-artist"
+							],
+							"artistsRomaji: [
+								"some-romaji-artist"
+							],
+							"artistGroup": false,
+							"artistGroups": [],
+							"artistGroupsRomaji": [],
+							"characters": [
+								"some-charcters"
+							],
+							"charactersRomaji": [
+								"some-romaji-characters"
+							],
+							"file": "some-file-name",
+							"source": "some-source",
+							"sourceRomaji": "some-romaji-sorce"
+							"title": "some-title",
+							"titleRomaji": "some-romaji-title",
+							"trackNumber": 1
+						]
+					}
+				]
+			}
 
 + Response 201 (application/json)
 
@@ -73,57 +135,11 @@
 + Response 400 (application/json)
 
 		{
-			"message": "Invalid Content-Type header, must be multipart w/ boundary."
-		}
-
-		{
-			"message": "Please only upload mp3s."
-		}
-
-		{
-			"message": "No file(s) selected."
-		}
-
-		{
-			"message": "Exceeeded maximum number of files to upload."
-		}
-
-		{
-			"message": "The media tags for this file are missing the title, artists and/or album."
-		}
-
-+ Response 401 (application/json)
-
-		{
-			"message": "Invalid body provided."
-		}
-
-		{
-			"message": "Invalid authorization."
-		}
-
-		{
-			"message": "Already uploaded."
+			"message": "No body provided."
 		}
 
 + Response 403 (application/json)
 
 		{
-			"message": "This account has been disabled."
-		}
-
-+ Response 413 (application/json)
-
-		{
-			"message": "Content-Length too large."
-		}
-
-		{
-			"message": "Exceeded maximum filesize of payload."
-		}
-
-+ Response 500 (application/json)
-
-		{
-			"message": "Internal server error."
+			"message": "Not authorized."
 		}
