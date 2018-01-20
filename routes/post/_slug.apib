@@ -1,0 +1,176 @@
+## Posts [/posts/{slug}]
+
++ Parameters
+	+ slug
+
+## Get Post [GET]
+
++ Response 200 (application/json)
+
+		{
+			"message": "Successfully retrieved post.",
+			"post": [
+				{
+					"id": 1,
+					"type": 1,
+					"slug": "some-slug",
+					"title": "some-title",
+					"content": "some-content",
+					"createdAt": "1970-01-01T00:00:00.000Z",
+					"editedAt": "1970-01-01T00:00:00.000Z",
+					"user": {
+						"uuid": "345c45aa-5h76-9zh4-6tr7-6tkl52rn5783",
+						"username": "testuser",
+						"displayName": "TestUser",
+						"avatarImage": "testuser-512x512.jpg"
+					},
+					"comments": [
+						"id": 1,
+						"parentId": 0,
+						"content": "some-content",
+						"createdAt": "1970-01-01T00:00:00.000Z",
+						"editedAt": "1970-01-01T00:00:00.000Z",
+						"user": {
+							"uuid": "345c45aa-5h76-9zh4-6tr7-6tkl52rn5783",
+							"username": "testuser",
+							"displayName": "TestUser",
+							"avatarImage": "testuser-512x512.jpg"
+						},
+						...
+					]
+				},
+				...
+			]
+		}
+
++ Response 400 (application/json)
+
+		{
+			"message": "No params provided."
+		}
+
+		{
+			"message": "Invalid params provided."
+		}
+
++ Response 404 (application/json)
+
+		{
+			"message": "No post found."
+		}
+
+
+## Update Post [PATCH]
+
++ Request (application/json)
+
+	+ Headers
+
+			Accept: application/vnd.listen.v4+json
+			Authorization: Bearer JWT
+
+	+ Body
+
+			{
+				"title": "some new title",
+				"content": "some new content"
+			}
+
++ Response 200 (application/json)
+
+		{
+			"message": "Successfully updated the post",
+			"post": {
+				{
+					"id": 1,
+					"type": 1,
+					"content": "some-content",
+					"createdAt": "1970-01-01T00:00:00.000Z",
+					"editedAt": "1970-01-01T00:00:00.000Z",
+					"user": {
+						"uuid": "345c45aa-5h76-9zh4-6tr7-6tkl52rn5783",
+						"username": "testuser",
+						"displayName": "TestUser",
+						"avatarImage": "testuser-512x512.jpg"
+					},
+					"comments": [
+						"id": 1,
+						"parentId": 0,
+						"content": "some-content",
+						"createdAt": "1970-01-01T00:00:00.000Z",
+						"editedAt": "1970-01-01T00:00:00.000Z",
+						"user": {
+							"uuid": "345c45aa-5h76-9zh4-6tr7-6tkl52rn5783",
+							"username": "testuser",
+							"displayName": "TestUser",
+							"avatarImage": "testuser-512x512.jpg"
+						},
+						...
+					]
+				}
+			}
+		}
+
++ Response 400 (application/json)
+
+		{
+			"message": "No params provided."
+		}
+
+		{
+			"message": "Invalid params provided."
+		}
+
+		{
+			"message": "No body provided."
+		}
+
+		{
+			"message": "Invalid body provided."
+		}
+
++ Response 403 (application/json)
+
+		{
+			"message": "Not authorized."
+		}
+
++ Response 404 (application/json)
+
+		{
+			"message": "No post found."
+		}
+
+## Delete Post [DELETE]
+
++ Request (application/json)
+
+	+ Headers
+
+			Accept: application/vnd.listen.v4+json
+			Authorization: Bearer JWT
+
++ Response 204
+
++ Response 400 (application/json)
+
+
+		{
+			"message": "No params provided."
+		}
+
+		{
+			"message": "Invalid params provided."
+		}
+
++ Response 403 (application/json)
+
+		{
+			"message": "Not authorized."
+		}
+
++ Response 404 (application/json)
+
+		{
+			"message": "No post found."
+		}

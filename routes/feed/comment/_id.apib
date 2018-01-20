@@ -1,9 +1,9 @@
-## Comment [/comments/{id}]
+## Feed Comments [/feeds/{id}/comments]
 
 + Parameters
 	+ id
 
-## Get Comment [GET]
+## Get Comments [GET]
 
 + Request (application/json)
 
@@ -15,20 +15,28 @@
 + Response 200 (application/json)
 
 		{
-			"message": "Successfully retrieved comment.",
-			"comment": {
-				"id": 1,
-				"parentId": 0,
-				"content": "some-content",
-				"createdAt": "1970-01-01T00:00:00.000Z",
-				"editedAt": "1970-01-01T00:00:00.000Z",
-				"user": {
-					"uuid": "345c45aa-5h76-9zh4-6tr7-6tkl52rn5783",
-					"username": "testuser",
-					"displayName": "TestUser",
-					"avatarImage": "testuser-512x512.jpg"
-				}
-			}
+			"message": "Successfully retrieved comments.",
+			"comments": [
+				{
+					"id": 1,
+					"parentId": 0,
+					"content": "some-content",
+					"createdAt": "1970-01-01T00:00:00.000Z",
+					"editedAt": "1970-01-01T00:00:00.000Z",
+					"user": {
+						"uuid": "345c45aa-5h76-9zh4-6tr7-6tkl52rn5783",
+						"username": "testuser",
+						"displayName": "TestUser",
+						"avatarImage": "testuser-512x512.jpg"
+					}
+				},
+				...
+			]
+		}
+
+		{
+			"message": "No comments found.",
+			"comments": []
 		}
 
 + Response 400 (application/json)
@@ -44,11 +52,11 @@
 + Response 404 (application/json)
 
 		{
-			"message": "No comment found."
+			"message": "No feed found."
 		}
 
-## Edit Comment [PATCH]
 
+## Post Comment [POST]
 
 + Request (application/json)
 
@@ -60,13 +68,14 @@
 	+ Body
 
 			{
-				"content": "new-content"
+				"parentId": 0,
+				"content": "some new comment"
 			}
 
 + Response 200 (application/json)
 
 		{
-			"message": "Successfully updated comment.",
+			"message": "Successfully commented on the feed",
 			"comment": {
 				"id": 1,
 				"parentId": 0,
@@ -100,14 +109,12 @@
 			"message": "Invalid body provided."
 		}
 
-+ Response 403 (application/json)
-
-		{
-			"message": "Not authorized."
-		}
-
 + Response 404 (application/json)
 
 		{
 			"message": "No comment found."
+		}
+
+		{
+			"message": "No feed found."
 		}
