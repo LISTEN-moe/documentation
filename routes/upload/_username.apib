@@ -1,0 +1,77 @@
+## User Uploads [/uploads/{username}]
+
++ Parameters
+	+ username
+
+## Get Uploads [GET]
+
++ Request (application/json)
+
+	+ Headers
+
+			Accept: application/vnd.listen.v4+json
+			Authorization: Bearer JWT
+
++ Response 200 (application/json)
+
+		{
+			"message": "Successfully retrieved uploads.",
+			"uploads": [
+				{
+					"albums": [
+						"Märchen EP"
+					],
+					"albumsRomaji": [
+						""
+					],
+					"approved": true,
+					"approvedAt": "1970-01-01T00:00:00.000Z",
+					"artistGroups": [],
+					"artistGroupsRomaji": [],
+					"artists": [
+						"Aiobahn"
+					],
+					"artistsRomaji": [
+						""
+					],
+					"characters": [],
+					"charactersRomaji": [],
+					"comment": null,
+					"cover": true,
+					"id": 1,
+					"image": "Märchen-EP_cover.jpg",
+					"processed": true,
+					"reason": null,
+					"releaseDate": "1970-01-01T00:00:00.000Z",
+					"source": null,
+					"souceRomaji": null,
+					"title": "ヘンゼルとグレーテルの森",
+					"titleRomaji": null,
+					"trackNumber": 1,
+					"type": 1,
+					"uploadedAt": "1970-01-01T00:00:00.000Z"
+				},
+				...
+			]
+		}
+
+		{
+			"message": "This user does not have any uploads.",
+			"uploads": []
+		}
+
++ Response 400 (application/json)
+
+		{
+			"message": "No params provided."
+		}
+
+		{
+			"message": "Invalid params provided."
+		}
+
++ Response 404 (application/json)
+
+		{
+			"message": "No user found."
+		}
