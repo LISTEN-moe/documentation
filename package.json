@@ -1,7 +1,7 @@
 {
 	"name": "listen.moe-docs",
 	"version": "4.0.0",
-	"description": "The documentation for LISTEN.moe",
+	"description": "Documentation for the LISTEN.moe API",
 	"private": true,
 	"author": {
 		"name": "iCrawl",
@@ -14,30 +14,19 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/LISTEN-moe/docs.git"
+		"url": "git+https://github.com/LISTEN-moe/documentation.git"
 	},
 	"bugs": {
-		"url": "https://github.com/LISTEN-moe/docs.git/issues"
+		"url": "https://github.com/LISTEN-moe/documentation/issues"
 	},
 	"keywords": [
 		"docs",
 		"apib",
 		"api blueprint"
 	],
-	"homepage": "https://github.com/LISTEN-moe/docs.git#readme",
+	"homepage": "https://github.com/LISTEN-moe/documentation#readme",
 	"dependencies": {
 		"aglio": "^2.3.0"
-	},
-	"devDependencies": {
-		"eslint": "^4.15.0",
-		"eslint-config-aqua": "^2.0.1"
-	},
-	"eslintConfig": {
-		"extends": "aqua",
-		"rules": {
-			"no-process-env": "off",
-			"id-length": "off"
-		}
 	},
 	"engines": {
 		"node": ">=8.0.0"
