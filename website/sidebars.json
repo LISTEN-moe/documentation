@@ -1,0 +1,7 @@
+{
+	"docs": {
+		"Getting Started": ["getting_started_1"],
+		"Websocket": ["websocket_1"],
+		"API": ["api_1"]
+	}
+}
