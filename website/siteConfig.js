@@ -10,22 +10,23 @@ const siteConfig = {
 	tagline: 'A website for testing',
 	url: 'https://listen.moe',
 	baseUrl: '/',
-	organizationName: 'listen-moe',
+	organizationName: 'LISTEN-moe',
 	projectName: 'documentation',
 	headerLinks: [
-		{doc: 'getting_started_1', label: 'Docs'},
-		{blog: true, label: 'Blog'},
+		{ doc: 'getting_started_1', label: 'Docs' },
+		{ blog: true, label: 'Blog' },
 	],
 	/* path to images for header/footer */
 	headerIcon: 'img/logo.png',
 	footerIcon: 'img/logo.png',
 	favicon: 'img/favicon.png',
+	onPageNav: 'separate',
 	/* colors for website */
 	colors: {
 		primaryColor: '#131524',
 		secondaryColor: '#205C3B',
 	},
-	editUrl: "https://github.com/listen-moe/documentation/edit/master/docs/",
+	editUrl: "https://github.com/LISTEN-moe/documentation/edit/master/docs/",
 	/* custom fonts for website */
 	/*fonts: {
 		myFont: [
@@ -42,7 +43,7 @@ const siteConfig = {
 		new Date().getFullYear() +
 		' LISTEN.moe',
 	highlight: {
-		theme: 'hljs',
+		theme: 'hopscotch',
 	}
 };
 

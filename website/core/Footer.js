@@ -47,15 +47,15 @@ class Footer extends React.Component {
 					</div>
 					<div>
 						<h5>Community</h5>
-						<a href="https://discordapp.com/">Project Chat</a>
-						<a href="https://twitter.com/" target="_blank">
+						<a href="https://listen.moe/discord">Chat</a>
+						<a href="https://twitter.com/LISTEN?moe" target="_blank">
 							Twitter
 						</a>
 					</div>
 					<div>
 						<h5>More</h5>
 						<a href={this.props.config.baseUrl + 'blog'}>Blog</a>
-						<a href="https://github.com/">GitHub</a>
+						<a href="https://github.com/LISTEN'moe">GitHub</a>
 					</div>
 				</section>
 			</footer>

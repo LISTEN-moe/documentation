@@ -1,10 +1,10 @@
 ---
-id: websocket_1
+id: websocket
 title: Websocket Documentation
-sidebar_label: Oof² page
+sidebar_label: Using the websocket
 ---
 
-## What for
+## Introduction
 
 If you are building an app or service that interacts with [LISTEN.moe](https://listen.moe) chances are you also want to provide with currently playing song information, and the websocket is the way to get it.
 
