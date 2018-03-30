@@ -1,5 +1,5 @@
 ---
-id: websocket
+id: websocket_usage
 title: Websocket Documentation
 sidebar_label: Using the websocket
 ---
@@ -17,7 +17,7 @@ After the connection is established you have to authenticate yourself either wit
 ```js
 ws.onopen = () => {
 	clearInterval(this.sendHeartbeat);
-	const token = `Bearer ${your.token}` || '';
+	const token = token ? `Bearer ${token}` : '';
 	ws.send(JSON.stringify({ op: 0, d: { auth: token } }));
 };
 ```

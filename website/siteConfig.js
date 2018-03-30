@@ -7,7 +7,7 @@
 
 const siteConfig = {
 	title: 'LISTEN.moe Documentation',
-	tagline: 'A website for testing',
+	tagline: '',
 	url: 'https://listen.moe',
 	baseUrl: '/',
 	organizationName: 'LISTEN-moe',
