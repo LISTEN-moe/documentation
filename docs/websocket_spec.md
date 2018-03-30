@@ -141,7 +141,13 @@ An example of `OP 1` data looks like this:
 `TRACK_UPDATE` and `TRACK_UPDATE_REQUEST` can be the possible values depending on if you sent `OP 2` or not.
 
 
-The `d.event` property is either `null` or an `object` containing information about the event:
+The `d.requester` and `d.event` property is either `null` or an `object` containing information about the requester or event:
+
+```json
+"requester": {
+	"name": "some-username"
+}
+```
 
 ```json
 "event": {
