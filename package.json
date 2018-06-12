@@ -1,0 +1,37 @@
+{
+	"name": "docs",
+	"version": "4.0.0",
+	"description": "The docs for LISTEN.moe API",
+	"private": true,
+	"author": {
+		"name": "iCrawl",
+		"email": "icrawltogo@gmail.com"
+	},
+	"license": "UNLICENSED",
+	"scripts": {
+		"lint": "eslint src",
+		"dev": "vuepress dev docs",
+		"build": "vuepress build docs"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Pitu/listen.moe-api.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Pitu/listen.moe-api.git/issues"
+	},
+	"keywords": [],
+	"homepage": "https://github.com/Pitu/listen.moe-api.git#readme",
+	"dependencies": {},
+	"devDependencies": {
+		"eslint": "^4.19.1",
+		"eslint-config-aqua": "^4.3.0",
+		"vuepress": "^0.10.1"
+	},
+	"eslintConfig": {
+		"extends": "aqua/node"
+	},
+	"engines": {
+		"node": ">=8.0.0"
+	}
+}

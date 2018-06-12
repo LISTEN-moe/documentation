@@ -1,7 +1,0 @@
-{
-	"docs": {
-		"Getting Started": ["getting_started_1"],
-		"Websocket": ["websocket_spec", "websocket_usage"],
-		"API": ["api_1"]
-	}
-}

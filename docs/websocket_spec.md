@@ -1,8 +1,4 @@
----
-id: websocket_spec
-title: Websocket Spec
-sidebar_label: Spec
----
+# Websocket Spec
 
 ## Introduction
 

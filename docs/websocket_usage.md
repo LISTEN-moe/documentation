@@ -1,8 +1,4 @@
----
-id: websocket_usage
-title: Websocket Documentation
-sidebar_label: Using the websocket
----
+# Websocket Documentation
 
 ## Introduction
 
