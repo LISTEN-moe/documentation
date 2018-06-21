@@ -14,4 +14,6 @@ If you need access to the raw streams you can find them at:
 Keep in mind that the Vorbis stream carries metadata of the current song and has the best quality bandwidth-wise, so it's always encouraged to use this one.
 :::
 
+In case you want to listen to the radio in your own player you can either use one of the url provided above or download the respective **.m3u** files for [jpop](https://listen.moe/m3u8/jpop.m3u) and [kpop](https://listen.moe/m3u8/kpop.m3u)
+
 Without further ado, let's dive into the docs.
