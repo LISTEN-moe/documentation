@@ -12,3 +12,5 @@ logs/
 # Miscellaneous
 .tmp/
 .vscode/
+
+docs/.vuepress/dist
