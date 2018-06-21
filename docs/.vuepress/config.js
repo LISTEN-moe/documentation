@@ -17,7 +17,8 @@ module.exports = {
 					'api/account',
 					'api/songs',
 					'api/favorites',
-					'api/requests'
+					'api/requests',
+					'api/artists'
 				]
 			},
 			{
