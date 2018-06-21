@@ -34,7 +34,7 @@ Possible errors
 { "message": "Not authorized." }
 ```
 
-## Delete a favorited song
+## Get a specific artist
 
 ```
 Type: GET
