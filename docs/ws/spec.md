@@ -1,12 +1,18 @@
-# Websocket Documentation
-
-## Introduction
-
-If you are building an app or service that interacts with [LISTEN.moe](https://listen.moe) chances are you also want to provide with currently playing song information, and the websocket is the way to get it.
+# Specification
 
 ## Connecting
 
 To connect to our websocket start by establishing a connection to `wss://listen.moe/gateway` or `wss://listen.moe/kpop/gateway` depending which platform you want to retrieve data from.
+
+## OP Codes
+
+* `OP 0` - Authentication (send/receive)
+* `OP 1` - Receive data (receive)
+* `OP 2` - Receive requested data (send)
+* `OP 9` - Heartbeat (send)
+* `OP 10` - Heartbeat acknowledge (recieve)
+
+## Authenticating
 
 After the connection is established you have to authenticate yourself either with your credentials, or as an anonymous user if you don't need extended information of the playback. If you pick the latter just send an empty string as token, like in the example below.
 
@@ -17,9 +23,12 @@ ws.onopen = () => {
 	ws.send(JSON.stringify({ op: 0, d: { auth: token } }));
 };
 ```
+
 > Extended information on the playback includes how many songs are in the queue, how many songs were queued by you and how many songs are in queue before your next song.
 
-After authenticating, the websocket is gonna send you an `{ op: 0 }`, which means the websocket is asking you to prepare the heartbeat and it's interval to keep the connection alive. Depending if you authenticated yourself with a real token or not, the data should look like this:
+## Heartbeating
+
+After authenticating, the websocket is going to send you a `{ op: 0 }`, which means the websocket is asking you to prepare the heartbeat and it's interval to keep the connection alive. Depending if you authenticated yourself with a real token or not, the data should look like this:
 
 ```json
 {
@@ -36,25 +45,20 @@ After authenticating, the websocket is gonna send you an `{ op: 0 }`, which mean
 	}
 }
 ```
-An example implementation of heartbeat can be seen below:
 
-```js
-if (response.op === 0) return heartbeat(response.d.heartbeat);
+> A heartbeat is sent via `{ op: 9 }` and acknowledged by getting `{ op: 10 }` returned.
 
-heartbeat(ms) {
-	this.sendHeartbeat = setInterval(() => {
-		websocket.send(JSON.stringify({ op: 9 }));
-	}, ms);
-}
-```
-> A heartbeat is identified by sending back `{ op: 9 }`
+## Receiving data
 
+Only the `d` property of `OP 0` and `OP 1` contain actual data received from the WebSocket.
+The `t` property of `OP 1` is to identify the data received, it can be one of the following:
 
-## Retrieving data
+* `TRACK_UPDATE`
+* `TRACK_UPDATE_REQUEST`
 
-Every time the current song changes you'll receive data on the websocket. Whenever you receive `{ op: 1 }` it means there is new data available for you to display. Data contains current song as well as the past 2 songs played, and a variety of information about it such as artist, album, source if any, duration, and if it's a favorite song or not depending if you authenticated on the first step.
+Every time the current song changes you'll receive data on the WebSocket. Data contains the current song as well as the past 2 songs played, and a variety of information about it such as artist, album, source if any, duration, and if it's a favorite song or not depending if you authenticated or not.
 
-An example object received when a message is received can be seen below:
+An example of `OP 1` data looks like this:
 
 ```json
 {
@@ -123,5 +127,23 @@ An example object received when a message is received can be seen below:
 		"listeners": 92
 	},
 	"t": "TRACK_UPDATE"
+}
+```
+
+`TRACK_UPDATE` and `TRACK_UPDATE_REQUEST` can be the possible values depending on if you sent `OP 2` or not.
+
+
+The `d.requester` and `d.event` property is either `null` or an `object` containing information about the requester or event:
+
+```json
+"requester": {
+	"name": "some-username"
+}
+```
+
+```json
+"event": {
+	"name": "some-event-name",
+	"image": "some-image.jpg"
 }
 ```
