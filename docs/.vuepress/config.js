@@ -18,7 +18,10 @@ module.exports = {
 					'api/songs',
 					'api/favorites',
 					'api/requests',
-					'api/artists'
+					'api/artists',
+					'api/users',
+					'api/posts',
+					'api/feeds'
 				]
 			},
 			{
