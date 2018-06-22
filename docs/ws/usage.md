@@ -6,7 +6,7 @@ A simple JavaScript implementation could be as follows:
 
 ```js
 const WebSocket = require('ws');
-const jwt = null // Or the user's saved JWT;
+const jwt = null; // Or the user's saved JWT
 let ws;
 
 class SocketConnection {
@@ -29,7 +29,7 @@ class SocketConnection {
 		ws = new WebSocket('wss://listen.moe/gateway');
 		ws.onopen = () => {
 			clearInterval(this.sendHeartbeat);
-			const token = `Bearer ${jwt}` || '';
+			const token = jwt ? `Bearer ${jwt}` : '';
 			ws.send(JSON.stringify({ op: 0, d: { auth: token } }));
 		};
 		ws.onmessage = message => {
