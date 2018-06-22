@@ -16,13 +16,13 @@ module.exports = {
 		[ 'meta', { property: 'twitter:creator', name: 'twitter:creator', content: '@LISTEN_moe' } ],
 		[ 'meta', { property: 'twitter:title', name: 'twitter:title', content: `LISTEN.moe Docs` } ],
 		[ 'meta', { property: 'twitter:description', name: 'twitter:description', content: 'Documentation for everything API and WebSocket related to LISTEN.moe' } ],
-		[ 'meta', { property: 'twitter:image', name: 'twitter:image', content: 'https://listen.moe/public/images/share.jpg' } ],
+		[ 'meta', { property: 'twitter:image', name: 'twitter:image', content: 'https://listen.moe/public/images/share2.jpg' } ],
 		[ 'meta', { property: 'og:url', property: 'og:url', content: 'https://docs.listen.moe' } ],
 		[ 'meta', { property: 'og:type', property: 'og:type', content: 'website' } ],
 		[ 'meta', { property: 'og:title', property: 'og:title', content: `LISTEN.moe Docs` } ],
 		[ 'meta', { property: 'og:description', property: 'og:description', content: 'Documentation for everything API and WebSocket related to LISTEN.moe' } ],
-		[ 'meta', { property: 'og:image', property: 'og:image', content: 'https://listen.moe/public/images/share.jpg' } ],
-		[ 'meta', { property: 'og:image:secure_url', property: 'og:image:secure_url', content: 'https://listen.moe/public/images/share.jpg' } ],
+		[ 'meta', { property: 'og:image', property: 'og:image', content: 'https://listen.moe/public/images/share2.jpg' } ],
+		[ 'meta', { property: 'og:image:secure_url', property: 'og:image:secure_url', content: 'https://listen.moe/public/images/share2.jpg' } ],
 		[ 'meta', { property: 'og:site_name', property: 'og:site_name', content: 'LISTEN.moe Docs' } ]
 	],
 	markdown: {
