@@ -8,7 +8,7 @@ To connect to our websocket start by establishing a connection to `wss://listen.
 
 * `OP 0` - Authentication (send/receive)
 * `OP 1` - Receive data (receive)
-* `OP 2` - Receive requested data (send)
+* `OP 2` - Request data (send)
 * `OP 9` - Heartbeat (send)
 * `OP 10` - Heartbeat acknowledge (receive)
 
