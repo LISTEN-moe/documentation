@@ -63,6 +63,11 @@ module.exports = {
 				]
 			}
 		],
-		sidebarDepth: 2
+		sidebarDepth: 2,
+		repo: 'LISTEN-moe/documentation',
+		repoLabel: 'Contribute!',
+		docsDir: 'docs',
+		editLinks: true,
+		editLinkText: 'Help us improve this page!'
 	}
 }
