@@ -99,7 +99,7 @@ async def main(loop):
 
 		if data['op'] == 0:
 			heartbeat = data['d']['heartbeat'] / 1000
-			loop.create_task(_send_pings(heartbeat))
+			loop.create_task(_send_pings(ws, heartbeat))
 		elif data['op'] == 10:
 			# ignore pings
 			continue
