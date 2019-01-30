@@ -31,8 +31,8 @@ module.exports = {
 	themeConfig: {
 		nav: [
 			{ text: 'Home', link: '/' },
-			{ text: 'API Docs', link: '/api' },
-			{ text: 'WebSocket Docs', link: '/websocket' },
+			{ text: 'API Docs', link: '/api/' },
+			{ text: 'WebSocket Docs', link: '/ws/' },
 			{ text: 'LISTEN.moe', link: 'https://listen.moe' }
 		],
 		lastUpdated: 'Last Updated',
