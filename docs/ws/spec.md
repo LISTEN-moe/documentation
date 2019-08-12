@@ -2,7 +2,7 @@
 
 ## Connecting
 
-To connect to our websocket start by establishing a connection to `wss://listen.moe/gateway` or `wss://listen.moe/kpop/gateway` depending which platform you want to retrieve data from.
+To connect to our websocket start by establishing a connection to `wss://listen.moe/gateway_v2` or `wss://listen.moe/kpop/gateway_v2` depending which platform you want to retrieve data from.
 
 ## Received OP Codes
 

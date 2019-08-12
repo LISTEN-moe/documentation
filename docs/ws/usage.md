@@ -94,9 +94,6 @@ async def main(loop):
 		elif data['op'] == 1:
 			pprint(data)
 			# Now we do with data as we wish.
-		else:
-			# Ignore
-
 
 if __name__ == '__main__':
 	loop = asyncio.get_event_loop()
