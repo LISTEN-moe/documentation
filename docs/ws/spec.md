@@ -4,43 +4,24 @@
 
 To connect to our websocket start by establishing a connection to `wss://listen.moe/gateway` or `wss://listen.moe/kpop/gateway` depending which platform you want to retrieve data from.
 
-## OP Codes
+## Received OP Codes
 
-* `OP 0` - Authentication (send/receive)
-* `OP 1` - Receive data (receive)
-* `OP 2` - Request data (send)
-* `OP 9` - Heartbeat (send)
-* `OP 10` - Heartbeat acknowledge (receive)
+* `OP 0` - Received welcome and heartbeat interval
+* `OP 1` - Received playback information
 
-## Authenticating
+## Sending OP Codes
 
-After the connection is established you have to authenticate yourself either with your credentials, or as an anonymous user if you don't need extended information of the playback. If you pick the latter just send an empty string as token, like in the example below.
-
-```js
-ws.onopen = () => {
-	clearInterval(this.sendHeartbeat);
-	const token = token ? `Bearer ${token}` : '';
-	ws.send(JSON.stringify({ op: 0, d: { auth: token } }));
-};
-```
-
-> Extended information on the playback includes how many songs are in the queue, how many songs were queued by you and how many songs are in queue before your next song.
+* `OP 9` - Send heartbeat to keep connection alive
 
 ## Heartbeating
 
-After authenticating, the websocket is going to send you a `{ op: 0 }`, which means the websocket is asking you to prepare the heartbeat and it's interval to keep the connection alive. Depending if you authenticated yourself with a real token or not, the data should look like this:
+After connecting, the websocket is going to send you a `{ op: 0 }`, which means the websocket is asking you to prepare the heartbeat and it's interval to keep the connection alive. The data should look like this:
 
 ```json
 {
 	"op": 0,
 	"d": {
 		"message": "Welcome to LISTEN.moe! Enjoy your stay!",
-		"user": {
-			"uuid": "random-uuid",
-			"email": "your@email",
-			"username": "kana",
-			"displayName": "Kana"
-		},
 		"heartbeat": 45000
 	}
 }
